@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Document</title>
+	</head>
+	<body class="bg-slate-50">
+		<header>
+			<nav class="bg-blue-500 text-white fixed top-0 inset-x-0">
+				<div class="container flex items-center justify-between">
+					<div>
+						<a
+							href="/"
+							class="block py-6 px-8 text-3xl"
+							>Logo</a
+						>
+					</div>
+					<div class="flex items-center">
+						<ul class="nav-items flex items-center">
+							<!-- nav items will go here -->
+						</ul>
+						<div>
+							<a
+								id="nav-contact"
+								href="/contact"
+								class="capitalize block py-6 text-lg px-3 ml-8"
+								>contact us</a
+							>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<div class="container">
+				<div class="cards mt-24 grid-cols-[repeat(auto-fill,minmax(min(100%,300px),1fr))] gap-6">
+					<!-- cards will go here -->
+				</div>
+				<section
+					id="contact"
+					class="hidden place-items-center min-h-screen"
+				>
+					<form
+						action="/"
+						method="POST"
+						id="contactForm"
+						class="min-w-[40rem] space-y-12"
+					>
+						<input
+							type="hidden"
+							name="contact_number"
+							value="697483"
+						/>
+						<div class="flex flex-col gap-2">
+							<label
+								for="user_name"
+								class="font-bold text-lg"
+								>Your First Name:
+							</label>
+							<input
+								type="text"
+								id="user_name"
+								name="user_name"
+								placeholder="John Smith"
+								required
+								class="py-3 px-4 rounded-md w-full"
+							/>
+						</div>
+						<div class="flex flex-col gap-2">
+							<label
+								for="user_email"
+								class="font-bold text-lg"
+								>Your Email Address:
+							</label>
+							<input
+								type="email"
+								id="user_email"
+								name="user_email"
+								placeholder="abc@gmail.com"
+								required
+								class="py-3 px-4 rounded-md w-full"
+							/>
+						</div>
+						<div class="flex flex-col gap-2">
+							<label
+								for="message"
+								class="font-bold text-lg"
+								>Please let us know what are your suggestions to improve our website:
+							</label>
+							<textarea
+								id="message"
+								name="message"
+								rows="12"
+								required
+								class="w-full py-3 px-4"
+							></textarea>
+						</div>
+						<button
+							type="submit"
+							class="bg-blue-500 text-white p-4 px-8 rounded-lg text-lg"
+						>
+							Send
+						</button>
+					</form>
+				</section>
+			</div>
+		</main>
+		<footer class="bg-slate-800 text-white text-center py-1">
+			<div class="container">Made With &lt;3 By <a href="/">Mohamed Mostafa</a></div>
+		</footer>
+
+		<script
+			type="text/javascript"
+			src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+		></script>
+		<script type="text/javascript">
+			(function () {
+				emailjs.init({
+					publicKey: "IOeRcCdKnBBG4REhh",
+				});
+			})();
+		</script>
+	</body>
+</html>
