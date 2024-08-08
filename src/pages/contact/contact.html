@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Contact Page</title>
+	</head>
+	<body class="bg-slate-50 relative">
+		<header>
+			<nav id="navbar-placeholder"></nav>
+		</header>
+		<main class="py-8">
+			<div class="container max-w-[1200px]">
+				<section
+					id="contact"
+					class="grid place-items-center min-h-screen"
+				>
+					<form
+						action="/"
+						method="POST"
+						id="contactForm"
+						class="min-w-[40rem] space-y-12 shadow shadow-black/20 bg-gradient-to-t from-blue-500/30 to-transparent backdrop-blur-sm rounded-lg p-6"
+					>
+						<input
+							type="hidden"
+							name="contact_number"
+							value="697483"
+						/>
+						<div class="flex flex-col gap-2">
+							<label
+								for="user_name"
+								class="font-bold text-lg"
+								>Your First Name:
+							</label>
+							<input
+								type="text"
+								id="user_name"
+								name="user_name"
+								placeholder="John Smith"
+								required
+								class="py-3 px-4 rounded-md w-full"
+							/>
+						</div>
+						<div class="flex flex-col gap-2">
+							<label
+								for="user_email"
+								class="font-bold text-lg"
+								>Your Email Address:
+							</label>
+							<input
+								type="email"
+								id="user_email"
+								name="user_email"
+								placeholder="abc@gmail.com"
+								required
+								class="py-3 px-4 rounded-md w-full"
+							/>
+						</div>
+						<div class="flex flex-col gap-2">
+							<label
+								for="message"
+								class="font-bold text-lg"
+								>Please let us know what are your suggestions to improve our website:
+							</label>
+							<textarea
+								id="message"
+								name="message"
+								rows="12"
+								required
+								class="w-full py-3 px-4"
+							></textarea>
+						</div>
+						<button
+							type="submit"
+							class="bg-blue-500 text-white p-4 px-8 rounded-lg text-lg"
+						>
+							Send
+						</button>
+					</form>
+				</section>
+			</div>
+		</main>
+		<footer class="absolute inset-x-0 bottom-0 bg-zinc-800 text-white text-center py-1">
+			<div class="container">Made With &lt;3 By <a href="/">Mohamed Mostafa</a></div>
+		</footer>
+
+		<dialog
+			id="success-dialog"
+			class="backdrop:bg-transparent group"
+		>
+			<!-- new thing learned : leave the dialog display alone don't set it manually -->
+			<div class="flex flex-col items-center rounded-lg shadow shadow-black/30 bg-gradient-to-b from-blue-500/20 to-transparent">
+				<div class="w-full">
+					<button
+						id="close-success-dialog"
+						class="ml-auto block px-4 py-3 text-slate-800"
+					>
+						<div class="w-8">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 384 512"
+								fill="currentColor"
+							>
+								<!--Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+								<path
+									d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+								/>
+							</svg>
+						</div>
+					</button>
+				</div>
+				<div class="w-20 py-4 pb-8">
+					<img
+						src="./assets/check.png"
+						alt=""
+					/>
+				</div>
+				<p class="text-lg px-12 pb-12 text-center">
+					Your Suggestions Has Been<br />
+					Sent Successfully
+				</p>
+			</div>
+		</dialog>
+
+		<script
+			type="text/javascript"
+			src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+		></script>
+		<script type="text/javascript">
+			(function () {
+				emailjs.init({
+					publicKey: "IOeRcCdKnBBG4REhh",
+				});
+			})();
+		</script>
+	</body>
+</html>
