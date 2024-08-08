@@ -1,6 +1,6 @@
 import { fetchHeadLine } from "./api.js";
 import defaultNewsCardImage from "./assets/default-news-card-image.jpeg";
-
+import defaultData from "./defaultData";
 export default class DOM {
 	static renderNavItems() {
 		const headlines = [
@@ -72,7 +72,7 @@ export default class DOM {
 
 		cardsCont.innerHTML = "";
 		const data = await fetchHeadLine({ countryCode: countryCode, category });
-		const articles = data.articles;
+		const articles = data?.articles || defaultData[category];
 
 		for (const article of articles) {
 			if (article.title === "[Removed]") continue;
